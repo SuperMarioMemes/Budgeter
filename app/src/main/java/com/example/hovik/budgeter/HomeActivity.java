@@ -12,6 +12,7 @@ public class HomeActivity extends AppCompatActivity {
 
     TextView dollarDisplay;
     TextView percentDisplay;
+    TextView foodpercentview;
     EditText income;
     EditText food;
     EditText util;
@@ -31,9 +32,20 @@ public class HomeActivity extends AppCompatActivity {
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent infoactivity = new Intent(HomeActivity.this, InfoActivity.class);
+
+                float incomevalue = Float.parseFloat(income.getText().toString());
+
+                float foodDvalue = Float.parseFloat(food.getText().toString());
+                float foodpercent = (foodDvalue / incomevalue) * 100;
+                foodpercentview.setText(Float.toString(foodpercent));
+
+                float utilDvalue = Float.parseFloat((util.getText().toString()));
+
+
+
+                /*Intent infoactivity = new Intent(HomeActivity.this, InfoActivity.class);
                 startActivity(infoactivity);
-                finish();
+                finish(); */
             }
         });
 
