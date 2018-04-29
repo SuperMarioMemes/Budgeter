@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Budgeter</string>
+
+    <string-array name="category_names">
+        <item>Utilities</item>
+        <item>Food</item>
+        <item>Housing</item>
+        <item>Debt</item>
+        <item>Savings</item>
+        <item>Entertainment</item>
+        <item>Personal Care</item>
+        <item>Health Care</item>
+    </string-array>
 </resources>
