@@ -18,7 +18,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView utilpercentview;
     TextView housingpercentview;
     TextView debtpercentview;
-    TextView Savingspercentview;
+    TextView savingspercentview;
     TextView entpercentview;
     TextView personalpercentview;
     TextView healthpercentageview;
@@ -58,6 +58,41 @@ public class HomeActivity extends AppCompatActivity {
                 float utilpercent = (utilDvalue / incomevalue) * 100;
                 utilpercentview.setText(Float.toString(utilpercent));
 
+                Housing = (EditText) findViewById(R.id.HousingTxt);
+                housingpercentview = (TextView) findViewById(R.id.HousingViewPerc);
+                float housingDvalue = Float.parseFloat((Housing.getText().toString()));
+                float housingpercent = (housingDvalue/ incomevalue) * 100;
+                housingpercentview.setText(Float.toString(housingpercent));
+
+                Debt = findViewById(R.id.DebtTxt);
+                debtpercentview = findViewById(R.id.DebtViewPerc);
+                float debtDvakue = Float.parseFloat(Debt.getText().toString());
+                float debtpercent = (debtDvakue /incomevalue) * 100;
+                debtpercentview.setText(Float.toString(debtpercent));
+
+                Savings = findViewById(R.id.SavingsTxt);
+                savingspercentview = findViewById(R.id.SavingsViewPerc);
+                float savingsDvalue = Float.parseFloat(Savings.getText().toString());
+                float savingspercent = (savingsDvalue / incomevalue) * 100;
+                savingspercentview.setText(Float.toString(savingspercent));
+
+                entertainment = findViewById(R.id.EntertainmentTxt);
+                entpercentview = findViewById(R.id.EntertainViewPerc);
+                float entDvalue = Float.parseFloat(entertainment.getText().toString());
+                float entpercent = (entDvalue / incomevalue) * 100;
+                entpercentview.setText(Float.toString(entpercent));
+
+                personalCare = findViewById(R.id.PersonalCareDisplay;
+                personalpercentview = findViewById(R.id.PerCareViewPerc);
+                float pcareDvalue = Float.parseFloat(personalCare.getText().toString());
+                float pcarepercent = (pcareDvalue / incomevalue) * 100;
+                personalpercentview.setText(Float.toString(entpercent));
+
+                healthCare = findViewById(R.id.HealthCareTxt);
+                healthpercentageview = findViewById(R.id.healthcarepercentview);
+                float hcareDvalue = Float.parseFloat(personalCare.getText().toString());
+                float hcarepercent = (hcareDvalue / incomevalue);
+                healthpercentageview.setText(Float.toString(hcarepercent));
 
 
 
