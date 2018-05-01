@@ -1,12 +1,15 @@
 package com.example.hovik.budgeter;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -38,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button finishbtn = (Button) findViewById(R.id.AccountFinButton);
+        final Button finishbtn = (Button) findViewById(R.id.AccountFinButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
                 float entpercent = (entDvalue / incomevalue) * 100;
                 entpercentview.setText(Float.toString(entpercent));
 
-                personalCare = findViewById(R.id.PersonalCareDisplay;
+                personalCare = findViewById(R.id.PersonalCareDisplay);
                 personalpercentview = findViewById(R.id.PerCareViewPerc);
                 float pcareDvalue = Float.parseFloat(personalCare.getText().toString());
                 float pcarepercent = (pcareDvalue / incomevalue) * 100;
@@ -94,6 +97,7 @@ public class HomeActivity extends AppCompatActivity {
                 float hcarepercent = (hcareDvalue / incomevalue);
                 healthpercentageview.setText(Float.toString(hcarepercent));
 
+                savedata(finishbtn);
 
 
                 /*Intent infoactivity = new Intent(HomeActivity.this, InfoActivity.class);
@@ -102,5 +106,24 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+    }
+    //function for saving data entered in the text fields, so they can be reused when app is reopened
+    public void savedata(View view) {
+
+        SharedPreferences sharedpref = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor outfile = sharedpref.edit();
+        outfile.putString("income", income.getText().toString());
+        outfile.putString("food", food.getText().toString());
+        outfile.putString("util", util.getText().toString());
+        outfile.putString("housing", Housing.getText().toString());
+        outfile.putString("debt", Debt.getText().toString());
+        outfile.putString("savings", Savings.getText().toString());
+        outfile.putString("entertainment", entertainment.getText().toString());
+        outfile.putString("personalCare", personalCare.getText().toString());
+        outfile.putString("healthCare",healthCare.getText().toString());
+        outfile.apply();
+
+        Toast.makeText(this, "Saved!", Toast.LENGTH_LONG).show();
     }
 }
