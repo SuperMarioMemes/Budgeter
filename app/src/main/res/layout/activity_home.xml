@@ -1,521 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
 
 
-    <TextView
-        android:id="@+id/createAccountDisplay"
-        android:layout_width="101dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Create Account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
-
-        <EditText
-            android:id="@+id/incomeTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Income"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.181" />
-
-        <EditText
-            android:id="@+id/UtilTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Utilities"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.273" />
-
-        <EditText
-            android:id="@+id/FoodTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Food"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.364" />
-
-        <EditText
-            android:id="@+id/HousingTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Housing"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.458" />
-
-        <EditText
-            android:id="@+id/DebtTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Debt"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.549" />
-
-        <EditText
-            android:id="@+id/SavingsTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Savings"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.641" />
-
-        <EditText
-            android:id="@+id/EntertainmentTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Entertainment"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.732" />
-
-        <EditText
-            android:id="@+id/PersonalCareDisplay"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Personal Care"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.824" />
-
-        <EditText
-            android:id="@+id/HealthCareTxt"
-            android:layout_width="176dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Health Care"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.915" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/DollarDisplay"
-            android:layout_width="127dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:id="@+id/createAccountDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:text="Create Account" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/InputLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/incomeTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Income"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/EntertainmentTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Entertainment"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/HousingTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Housing"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/DebtTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Debt"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/FoodTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Food"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/SavingsTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Savings"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/UtilTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Utilities"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/PersonalCareDisplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Personal Care"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/HealthCareTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:ems="10"
+                        android:hint="Health Care"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/IncomePriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/PCPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/DebtPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/HCPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/FoodPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/HousingPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/EntertainmentPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/UtilityPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+
+                    <CheckBox
+                        android:id="@+id/SavingsPriorityCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/EntertainViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/HousingViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/SavingsViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/DebtViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/PerCareViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/FoodViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/UtilViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/IncomeViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
+                        android:id="@+id/healthcarepercentview"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/AccountFinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Finish" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/DollarDisplay"
+        android:layout_width="127dp"
+        android:layout_height="47dp" />
 
     <TextView
         android:id="@+id/PercentDisplay"
         android:layout_width="127dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/IncomeViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.181" />
-
-        <TextView
-            android:id="@+id/UtilViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.273" />
-
-        <TextView
-            android:id="@+id/FoodViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.364" />
-
-        <TextView
-            android:id="@+id/HousingViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.456" />
-
-        <TextView
-            android:id="@+id/DebtViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.549" />
-
-        <TextView
-            android:id="@+id/SavingsViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.641" />
-
-        <TextView
-            android:id="@+id/EntertainViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.732" />
-
-        <TextView
-            android:id="@+id/PerCareViewPerc"
-            android:layout_width="108dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.972"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.824" />
-
-    <TextView
-        android:id="@+id/healthcarepercentview"
-        android:layout_width="108dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
-
-    <Button
-        android:id="@+id/AccountFinButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Finish"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <CheckBox
-        android:id="@+id/IncomePriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.194" />
-
-    <CheckBox
-        android:id="@+id/UtilityPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.276" />
-
-    <CheckBox
-        android:id="@+id/FoodPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
-
-    <CheckBox
-        android:id="@+id/HousingPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453" />
-
-    <CheckBox
-        android:id="@+id/DebtPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
-
-    <CheckBox
-        android:id="@+id/SavingsPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632" />
-
-    <CheckBox
-        android:id="@+id/EntertainmentPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
-
-    <CheckBox
-        android:id="@+id/PCPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.809" />
-
-    <CheckBox
-        android:id="@+id/HCPriorityCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        android:layout_height="52dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Priority"
-        app:layout_constraintBottom_toTopOf="@+id/IncomePriorityCheck"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:text="Priority" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
