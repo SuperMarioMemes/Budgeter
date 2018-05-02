@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Budgeter</string>
 
-    <string-array name="category_names">
+    <string-array name="categories">
+        <item>Select Category...</item>
         <item>Utilities</item>
         <item>Food</item>
         <item>Housing</item>
