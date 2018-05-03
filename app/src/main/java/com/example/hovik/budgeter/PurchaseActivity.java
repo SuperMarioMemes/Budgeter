@@ -1,9 +1,11 @@
 package com.example.hovik.budgeter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -23,6 +25,16 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
+
+        Button finishbtn = (Button) findViewById(R.id.PurchaseFinButton);
+        finishbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent finishbtn = new Intent(PurchaseActivity.this, InfoActivity.class);
+                startActivity(finishbtn);
+                finish();
+            }
+        });
     }
 
     @Override
