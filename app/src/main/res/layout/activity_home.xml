@@ -212,9 +212,15 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/AccountFinButton"
+            android:id="@+id/AccountCalcButton"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:text="Calculate" />
+
+        <Button
+            android:id="@+id/AccountFinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Finish" />
     </LinearLayout>
 
@@ -233,5 +239,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Priority" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>
