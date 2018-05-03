@@ -82,7 +82,7 @@ public class HomeActivity extends AppCompatActivity {
                 float entpercent = (entDvalue / incomevalue) * 100;
                 entpercentview.setText(Float.toString(entpercent));
 
-                personalCare = findViewById(R.id.PersonalCareDisplay;
+                personalCare = findViewById(R.id.PersonalCareDisplay);
                 personalpercentview = findViewById(R.id.PerCareViewPerc);
                 float pcareDvalue = Float.parseFloat(personalCare.getText().toString());
                 float pcarepercent = (pcareDvalue / incomevalue) * 100;
