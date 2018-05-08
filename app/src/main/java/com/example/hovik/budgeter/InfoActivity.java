@@ -28,6 +28,7 @@ public class InfoActivity extends AppCompatActivity {
 
         final PieChart Chart = (PieChart) findViewById(R.id.CurrentPieChart);
         Chart.invalidate();
+        Chart.notifyDataSetChanged();
         setupCurrentPieChart(Chart);
 
         Button newpurchase = (Button) findViewById(R.id.AddPurchase);
@@ -36,6 +37,16 @@ public class InfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent purchaseintent = new Intent(InfoActivity.this, PurchaseActivity.class);
                 startActivity(purchaseintent);
+                finish();
+            }
+        });
+
+        Button settings = (Button) findViewById(R.id.seettingsButton);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settingsintent = new Intent(InfoActivity.this, SettingsActivity.class);
+                startActivity(settingsintent);
                 finish();
             }
         });
