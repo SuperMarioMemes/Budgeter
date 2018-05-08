@@ -28,6 +28,7 @@ public class InfoActivity extends AppCompatActivity {
     String personalCare = getIntent().getStringExtra("personalCare");
     String healthcare = getIntent().getStringExtra("healthCare");
 
+    //values used for pie chart
     float foodcost = Float.parseFloat(food);
     float utilcost = Float.parseFloat(util);
     float housingcost = Float.parseFloat(housing);
