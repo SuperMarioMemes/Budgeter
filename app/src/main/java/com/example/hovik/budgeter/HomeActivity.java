@@ -27,20 +27,23 @@ public class HomeActivity extends AppCompatActivity {
     TextView personalpercentview;
     TextView healthpercentageview;
 
-    EditText income = (EditText) findViewById(R.id.incomeTxt);
-    EditText food = (EditText) findViewById(R.id.FoodTxt);
-    EditText util = (EditText) findViewById(R.id.UtilTxt);
-    EditText Housing = (EditText) findViewById(R.id.HousingTxt);
-    EditText Debt = findViewById(R.id.DebtTxt);
-    EditText  Savings = findViewById(R.id.SavingsTxt);
-    EditText entertainment = findViewById(R.id.EntertainmentTxt);
-    EditText   personalCare = findViewById(R.id.PersonalCareDisplay);
-    EditText  healthCare = findViewById(R.id.HealthCareTxt);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+       final  EditText income = (EditText) findViewById(R.id.incomeTxt);
+       final EditText food = (EditText) findViewById(R.id.FoodTxt);
+       final EditText util = (EditText) findViewById(R.id.UtilTxt);
+       final  EditText Housing = (EditText) findViewById(R.id.HousingTxt);
+       final  EditText Debt = findViewById(R.id.DebtTxt);
+       final EditText Savings = findViewById(R.id.SavingsTxt);
+       final EditText entertainment = findViewById(R.id.EntertainmentTxt);
+       final  EditText personalCare = findViewById(R.id.PersonalCareDisplay);
+       final EditText healthCare = findViewById(R.id.HealthCareTxt);
 
         //updates
         final Button finishbtn = (Button) findViewById(R.id.AccountFinButton);
@@ -48,9 +51,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent infointent = new Intent(HomeActivity.this, InfoActivity.class );
-                infointent.putExtra("income", Float.parseFloat(income.getText().toString()) );
-                infointent.putExtra("food", Float.parseFloat(food.getText().toString() ));
+                Intent infointent = new Intent(HomeActivity.this, InfoActivity.class);
+                infointent.putExtra("income", Float.parseFloat(income.getText().toString()));
+                infointent.putExtra("food", Float.parseFloat(food.getText().toString()));
                 infointent.putExtra("util", Float.parseFloat(util.getText().toString()));
                 infointent.putExtra("housing", Float.parseFloat(Housing.getText().toString()));
                 infointent.putExtra("debt", Float.parseFloat(Debt.getText().toString()));
@@ -64,10 +67,11 @@ public class HomeActivity extends AppCompatActivity {
             }
 
         });
-        Button calculatepercentages = (Button) findViewById(R.id.AccountCalcButton);
+        final Button calculatepercentages = (Button) findViewById(R.id.AccountCalcButton);
         calculatepercentages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
 
                 float incomevalue = Float.parseFloat(income.getText().toString());
@@ -87,13 +91,13 @@ public class HomeActivity extends AppCompatActivity {
 
                 housingpercentview = (TextView) findViewById(R.id.HousingViewPerc);
                 float housingDvalue = Float.parseFloat((Housing.getText().toString()));
-                float housingpercent = (housingDvalue/ incomevalue) * 100;
+                float housingpercent = (housingDvalue / incomevalue) * 100;
                 housingpercentview.setText(Float.toString(housingpercent));
 
 
                 debtpercentview = findViewById(R.id.DebtViewPerc);
                 float debtDvakue = Float.parseFloat(Debt.getText().toString());
-                float debtpercent = (debtDvakue /incomevalue) * 100;
+                float debtpercent = (debtDvakue / incomevalue) * 100;
                 debtpercentview.setText(Float.toString(debtpercent));
 
 
@@ -120,15 +124,16 @@ public class HomeActivity extends AppCompatActivity {
                 float hcarepercent = (hcareDvalue / incomevalue) * 100;
                 healthpercentageview.setText(Float.toString(hcarepercent));
 
-                saveData(finishbtn);
+                // saveData(finishbtn);
 
 
             }
         });
 
     }
+}
     //function for saving data entered in the text fields, so they can be reused when app is reopened
-    public void saveData(View view) {
+   /* public void saveData(View view) {
 
         SharedPreferences sharedpref = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
 
@@ -147,4 +152,4 @@ public class HomeActivity extends AppCompatActivity {
         Toast.makeText(this, "Saved!", Toast.LENGTH_LONG).show();
     }
 }
-
+*/

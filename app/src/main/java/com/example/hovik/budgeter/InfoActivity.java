@@ -19,30 +19,6 @@ import java.util.List;
 public class InfoActivity extends AppCompatActivity {
 
 
-    String food = getIntent().getStringExtra("food");
-    String util = getIntent().getStringExtra("util");
-    String housing = getIntent().getStringExtra("housing");
-    String debt = getIntent().getStringExtra("debt");
-    String savings = getIntent().getStringExtra("savings");
-    String entertainment = getIntent().getStringExtra("entertainment");
-    String personalCare = getIntent().getStringExtra("personalCare");
-    String healthcare = getIntent().getStringExtra("healthCare");
-
-    //values used for pie chart
-    float foodcost = Float.parseFloat(food);
-    float utilcost = Float.parseFloat(util);
-    float housingcost = Float.parseFloat(housing);
-    float debtcost = Float.parseFloat(debt);
-    float savingscost = Float.parseFloat(savings);
-    float entertainmentcost = Float.parseFloat(entertainment);
-    float personalCarecost = Float.parseFloat(personalCare);
-    float healthCarecost = Float.parseFloat(healthcare);
-
-    float tempNums[] = {utilcost, foodcost, housingcost, debtcost, savingscost, entertainmentcost, personalCarecost, healthCarecost};
-    String categories[] = {"Utilities", "Food", "Housing", "Debt", "Savings", "Entertainment",
-                            "Personal Care", "Health Care"};
-    int chartColors[] = {Color.GREEN, Color.CYAN, Color.RED, Color.BLUE, Color.MAGENTA,
-                        Color.YELLOW, Color.GRAY, Color.CYAN};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +40,31 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     private void setupPieChart() {
+        /*String food = getIntent().getFloatExtra("food",0);
+        String util = getIntent().getStringExtra("util");
+        String housing = getIntent().getStringExtra("housing");
+        String debt = getIntent().getStringExtra("debt");
+        String savings = getIntent().getStringExtra("savings");
+        String entertainment = getIntent().getStringExtra("entertainment");
+        String personalCare = getIntent().getStringExtra("personalCare");
+        String healthcare = getIntent().getStringExtra("healthCare"); */
+
+        //values used for pie chart
+        float foodcost = getIntent().getFloatExtra("food",0);
+        float utilcost = getIntent().getFloatExtra("util",0);
+        float housingcost = getIntent().getFloatExtra("housing",0);
+        float debtcost = getIntent().getFloatExtra("debt",0);
+        float savingscost = getIntent().getFloatExtra("savings",0);
+        float entertainmentcost = getIntent().getFloatExtra("entertainment",0);
+        float personalCarecost = getIntent().getFloatExtra("personalCare",0);
+        float healthCarecost = getIntent().getFloatExtra("healthCare",0);
+
+        float tempNums[] = {utilcost, foodcost, housingcost, debtcost, savingscost, entertainmentcost, personalCarecost, healthCarecost};
+        String categories[] = {"Utilities", "Food", "Housing", "Debt", "Savings", "Entertainment",
+                "Personal Care", "Health Care"};
+        int chartColors[] = {Color.GREEN, Color.CYAN, Color.RED, Color.BLUE, Color.MAGENTA,
+                Color.YELLOW, Color.GRAY, Color.CYAN};
+
         // Populate chart
         List<PieEntry> CatEntries = new ArrayList<>();
         for (int i = 0; i < categories.length; i++) {
