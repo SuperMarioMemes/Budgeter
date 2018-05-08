@@ -102,9 +102,8 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                             - newdebt - newsavings
                             - newpercare - newentertainment
                             - newhealthcare;
-                    final Float surplusPerc = (surplus / Float.parseFloat(SalaryText.getText().toString())) * 100;
-                    infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplusPerc)));
-                    infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplusPerc)));
+                    infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplus)));
+                    infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplus)));
 
                     startActivity(infointent);
                     finish();
@@ -120,9 +119,8 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                             - debtcost - savingscost
                             - personalCarecost - entertainmentcost
                             - healthCarecost;
-                    final Float surplusPerc = (surplus / Float.parseFloat(SalaryText.getText().toString())) * 100;
-                    infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplusPerc)));
-                    infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplusPerc)));
+                    infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplus)));
+                    infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplus)));
 
                     startActivity(infointent);
                     finish();

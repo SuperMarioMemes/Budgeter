@@ -79,9 +79,8 @@ public class HomeActivity extends AppCompatActivity {
                         - Float.parseFloat(Debt.getText().toString()) - Float.parseFloat(Savings.getText().toString())
                         - Float.parseFloat(personalCare.getText().toString()) - Float.parseFloat(entertainment.getText().toString())
                         - Float.parseFloat(healthCare.getText().toString());
-                final Float surplusPerc = (surplus / Float.parseFloat(income.getText().toString())) * 100;
-                infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplusPerc)));
-                infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplusPerc)));
+                infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplus)));
+                infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplus)));
 
                 startActivity(infointent);
                 finish();
@@ -154,24 +153,3 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 }
-    //function for saving data entered in the text fields, so they can be reused when app is reopened
-   /* public void saveData(View view) {
-
-        SharedPreferences sharedpref = getSharedPreferences("userinfo", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor outfile = sharedpref.edit();
-        outfile.putString("income", income.getText().toString());
-        outfile.putString("food", food.getText().toString());
-        outfile.putString("util", util.getText().toString());
-        outfile.putString("housing", Housing.getText().toString());
-        outfile.putString("debt", Debt.getText().toString());
-        outfile.putString("savings", Savings.getText().toString());
-        outfile.putString("entertainment", entertainment.getText().toString());
-        outfile.putString("personalCare", personalCare.getText().toString());
-        outfile.putString("healthCare",healthCare.getText().toString());
-        outfile.apply();
-
-        Toast.makeText(this, "Saved!", Toast.LENGTH_LONG).show();
-    }
-}
-*/
