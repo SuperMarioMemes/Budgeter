@@ -18,7 +18,7 @@ import java.util.List;
 
 public class InfoActivity extends AppCompatActivity {
 
-    float tempNums[] = {foodpercent, 2f, 3f, 4f, 5f, 6f, 7f, 8f};
+    float tempNums[] = {1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f};
     String categories[] = {"Utilities", "Food", "Housing", "Debt", "Savings", "Entertainment",
                             "Personal Care", "Health Care"};
     int chartColors[] = {Color.GREEN, Color.CYAN, Color.RED, Color.BLUE, Color.MAGENTA,
