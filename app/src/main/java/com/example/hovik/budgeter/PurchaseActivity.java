@@ -1,6 +1,8 @@
 package com.example.hovik.budgeter;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,62 +41,66 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
             @Override
             public void onClick(View v) {
 
+                SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = variables.edit();
+
                 float purchaseDvalue = Float.parseFloat(newPurchaseamt.getText().toString());
                 Intent infoActivity = new Intent(PurchaseActivity.this, InfoActivity.class);
                 if(spinner.getSelectedItem().toString().equals("Utilities"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("util", 0);
+                    float currentbudget = variables.getFloat("utilCopy",0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("util", newvalue);
+                    editor.putFloat("utilCopy", newvalue);
                 }
                 else if(spinner.getSelectedItem().toString().equals("Food"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("food", 0);
+                    float currentbudget = variables.getFloat("foodCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("food", newvalue);
+                    editor.putFloat("foodCopy", newvalue);
                 }
                 else if(spinner.getSelectedItem().toString().equals("Housing"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("housing", 0);
+                    float currentbudget = variables.getFloat("housingCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("housing", newvalue);
+                    editor.putFloat("housingCopy", newvalue);
                 }
                 else if (spinner.getSelectedItem().toString().equals("Debt"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("debt", 0);
+                    float currentbudget = variables.getFloat("debtCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("debt", newvalue);
+                    editor.putFloat("debtCopy", newvalue);
                 }
                 else if (spinner.getSelectedItem().toString().equals("Savings"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("savings", 0);
+                    float currentbudget = variables.getFloat("savingsCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("savings", newvalue);
+                    editor.putFloat("savingsCopy", newvalue);
                 }
                 else if(spinner.getSelectedItem().toString().equals("Entertainment"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("entertainment", 0);
+                    float currentbudget = variables.getFloat("entertainmentCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("entertainment", newvalue);
+                    editor.putFloat("entertainmentCopy", newvalue);
                 }
                 else if(spinner.getSelectedItem().toString().equals("Personal Care"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("personalCare", 0);
+                    float currentbudget = variables.getFloat("personalCareCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("personalCare", newvalue);
+                    editor.putFloat("personalCareCopy", newvalue);
                 }
                 else if(spinner.getSelectedItem().toString().equals("Health Care"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("healthCare", 0);
+                    float currentbudget = variables.getFloat("healthCareCopy", 0);
                     float newvalue = currentbudget - purchaseDvalue;
-                    infoActivity.putExtra("healthCare", newvalue);
+                    editor.putFloat("healthCareCopy", newvalue);
                 }
                 else if(spinner.getSelectedItem().toString().equals("Surplus"))
                 {
-                    float currentbudget = getIntent().getFloatExtra("surplus", 0);
+                    float currentbudget = variables.getFloat("surplusCopy", 0);
                     float newvalue = currentbudget + purchaseDvalue;
-                    infoActivity.putExtra("surplus", newvalue);
+                    editor.putFloat("surplusCopy", newvalue);
                 }
+                editor.commit();
                 startActivity(infoActivity);
                 finish();
             }

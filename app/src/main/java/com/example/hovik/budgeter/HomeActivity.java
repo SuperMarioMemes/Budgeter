@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.icu.text.IDNA;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,6 +75,28 @@ public class HomeActivity extends AppCompatActivity {
                 infointent.putExtra("entertainmentCopy", Float.parseFloat(entertainment.getText().toString()));
                 infointent.putExtra("healthCareCopy", Float.parseFloat(healthCare.getText().toString()));
 
+                SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = variables.edit();
+                editor.putFloat("income",Float.parseFloat(income.getText().toString()));
+                editor.putFloat("food", Float.parseFloat(food.getText().toString()));
+                editor.putFloat("util", Float.parseFloat(util.getText().toString()));
+                editor.putFloat("housing",  Float.parseFloat(Housing.getText().toString()));
+                editor.putFloat("savings", Float.parseFloat(Savings.getText().toString()));
+                editor.putFloat("personalCare", Float.parseFloat(personalCare.getText().toString()));
+                editor.putFloat("entertainment", Float.parseFloat(entertainment.getText().toString()));
+                editor.putFloat("healthCare", Float.parseFloat(healthCare.getText().toString()));
+
+
+                editor.putFloat("incomeCopy",Float.parseFloat(income.getText().toString()));
+                editor.putFloat("foodCopy", Float.parseFloat(food.getText().toString()));
+                editor.putFloat("utilCopy", Float.parseFloat(util.getText().toString()));
+                editor.putFloat("housingCopy",  Float.parseFloat(Housing.getText().toString()));
+                editor.putFloat("savingsCopy", Float.parseFloat(Savings.getText().toString()));
+                editor.putFloat("personalCareCopy", Float.parseFloat(personalCare.getText().toString()));
+                editor.putFloat("entertainmentCopy", Float.parseFloat(entertainment.getText().toString()));
+                editor.putFloat("healthCareCopy", Float.parseFloat(healthCare.getText().toString()));
+
+
                 final Float surplus = Float.parseFloat(income.getText().toString()) - Float.parseFloat(food.getText().toString())
                         - Float.parseFloat(util.getText().toString()) - Float.parseFloat(Housing.getText().toString())
                         - Float.parseFloat(Debt.getText().toString()) - Float.parseFloat(Savings.getText().toString())
@@ -81,7 +104,9 @@ public class HomeActivity extends AppCompatActivity {
                         - Float.parseFloat(healthCare.getText().toString());
                 infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplus)));
                 infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplus)));
-
+                editor.putFloat("surplus",surplus);
+                editor.putFloat("surplusCopy", surplus);
+                editor.commit();
                 startActivity(infointent);
                 finish();
 
@@ -145,11 +170,10 @@ public class HomeActivity extends AppCompatActivity {
                 float hcarepercent = (hcareDvalue / incomevalue) * 100;
                 healthpercentageview.setText(Float.toString(hcarepercent));
 
-                // saveData(finishbtn);
-
-
             }
         });
 
     }
+
+
 }
