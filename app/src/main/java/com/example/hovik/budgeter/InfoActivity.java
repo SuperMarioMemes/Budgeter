@@ -18,7 +18,26 @@ import java.util.List;
 
 public class InfoActivity extends AppCompatActivity {
 
-    float tempNums[] = {1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f};
+
+    String food = getIntent().getStringExtra("food");
+    String util = getIntent().getStringExtra("util");
+    String housing = getIntent().getStringExtra("housing");
+    String debt = getIntent().getStringExtra("debt");
+    String savings = getIntent().getStringExtra("savings");
+    String entertainment = getIntent().getStringExtra("entertainment");
+    String personalCare = getIntent().getStringExtra("personalCare");
+    String healthcare = getIntent().getStringExtra("healthCare");
+
+    float foodcost = Float.parseFloat(food);
+    float utilcost = Float.parseFloat(util);
+    float housingcost = Float.parseFloat(housing);
+    float debtcost = Float.parseFloat(debt);
+    float savingscost = Float.parseFloat(savings);
+    float entertainmentcost = Float.parseFloat(entertainment);
+    float personalCarecost = Float.parseFloat(personalCare);
+    float healthCarecost = Float.parseFloat(healthcare);
+
+    float tempNums[] = {utilcost, foodcost, housingcost, debtcost, savingscost, entertainmentcost, personalCarecost, healthCarecost};
     String categories[] = {"Utilities", "Food", "Housing", "Debt", "Savings", "Entertainment",
                             "Personal Care", "Health Care"};
     int chartColors[] = {Color.GREEN, Color.CYAN, Color.RED, Color.BLUE, Color.MAGENTA,
