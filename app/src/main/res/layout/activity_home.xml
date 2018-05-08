@@ -164,6 +164,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/IncomeViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
                         android:id="@+id/EntertainViewPerc"
                         android:layout_width="125dp"
                         android:layout_height="47dp" />
@@ -174,17 +179,7 @@
                         android:layout_height="47dp" />
 
                     <TextView
-                        android:id="@+id/SavingsViewPerc"
-                        android:layout_width="125dp"
-                        android:layout_height="47dp" />
-
-                    <TextView
                         android:id="@+id/DebtViewPerc"
-                        android:layout_width="125dp"
-                        android:layout_height="47dp" />
-
-                    <TextView
-                        android:id="@+id/PerCareViewPerc"
                         android:layout_width="125dp"
                         android:layout_height="47dp" />
 
@@ -194,12 +189,17 @@
                         android:layout_height="47dp" />
 
                     <TextView
+                        android:id="@+id/SavingsViewPerc"
+                        android:layout_width="125dp"
+                        android:layout_height="47dp" />
+
+                    <TextView
                         android:id="@+id/UtilViewPerc"
                         android:layout_width="125dp"
                         android:layout_height="47dp" />
 
                     <TextView
-                        android:id="@+id/IncomeViewPerc"
+                        android:id="@+id/PerCareViewPerc"
                         android:layout_width="125dp"
                         android:layout_height="47dp" />
 
