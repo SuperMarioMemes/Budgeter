@@ -42,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        //updates
         final Button finishbtn = (Button) findViewById(R.id.AccountFinButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
