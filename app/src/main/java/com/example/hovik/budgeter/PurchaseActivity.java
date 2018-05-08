@@ -30,8 +30,8 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent finishbtn = new Intent(PurchaseActivity.this, InfoActivity.class);
-                startActivity(finishbtn);
+                Intent infoActivity = new Intent(PurchaseActivity.this, InfoActivity.class);
+                startActivity(infoActivity);
                 finish();
             }
         });

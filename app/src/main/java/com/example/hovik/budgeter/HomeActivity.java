@@ -45,11 +45,14 @@ public class HomeActivity extends AppCompatActivity {
        final  EditText personalCare = findViewById(R.id.PersonalCareDisplay);
        final EditText healthCare = findViewById(R.id.HealthCareTxt);
 
+       // calculate surplus
+
         //updates
         final Button finishbtn = (Button) findViewById(R.id.AccountFinButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 Intent infointent = new Intent(HomeActivity.this, InfoActivity.class);
                 infointent.putExtra("income", Float.parseFloat(income.getText().toString()));
@@ -61,6 +64,25 @@ public class HomeActivity extends AppCompatActivity {
                 infointent.putExtra("personalCare", Float.parseFloat(personalCare.getText().toString()));
                 infointent.putExtra("entertainment", Float.parseFloat(entertainment.getText().toString()));
                 infointent.putExtra("healthCare", Float.parseFloat(healthCare.getText().toString()));
+                infointent.putExtra("incomeCopy", Float.parseFloat(income.getText().toString()));
+                infointent.putExtra("foodCopy", Float.parseFloat(food.getText().toString()));
+                infointent.putExtra("utilCopy", Float.parseFloat(util.getText().toString()));
+                infointent.putExtra("housingCopy", Float.parseFloat(Housing.getText().toString()));
+                infointent.putExtra("debtCopy", Float.parseFloat(Debt.getText().toString()));
+                infointent.putExtra("savingsCopy", Float.parseFloat(Savings.getText().toString()));
+                infointent.putExtra("personalCareCopy", Float.parseFloat(personalCare.getText().toString()));
+                infointent.putExtra("entertainmentCopy", Float.parseFloat(entertainment.getText().toString()));
+                infointent.putExtra("healthCareCopy", Float.parseFloat(healthCare.getText().toString()));
+
+                final Float surplus = Float.parseFloat(income.getText().toString()) - Float.parseFloat(food.getText().toString())
+                        - Float.parseFloat(util.getText().toString()) - Float.parseFloat(Housing.getText().toString())
+                        - Float.parseFloat(Debt.getText().toString()) - Float.parseFloat(Savings.getText().toString())
+                        - Float.parseFloat(personalCare.getText().toString()) - Float.parseFloat(entertainment.getText().toString())
+                        - Float.parseFloat(healthCare.getText().toString());
+                final Float surplusPerc = (surplus / Float.parseFloat(income.getText().toString())) * 100;
+                infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplusPerc)));
+                infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplusPerc)));
+
                 startActivity(infointent);
                 finish();
 
