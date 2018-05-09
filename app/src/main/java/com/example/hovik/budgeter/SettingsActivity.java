@@ -23,6 +23,15 @@ public class SettingsActivity extends AppCompatActivity {
                 finish();
             }
         });
+        Button back = (Button) findViewById(R.id.backButton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent infointent = new Intent(SettingsActivity.this, InfoActivity.class);
+                startActivity(infointent);
+                finish();
+            }
+        });
         Button salary = (Button) findViewById(R.id.ChangeSalaryButton);
         salary.setOnClickListener(new View.OnClickListener() {
             @Override
