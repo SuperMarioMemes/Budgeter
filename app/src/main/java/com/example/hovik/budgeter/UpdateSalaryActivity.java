@@ -22,50 +22,50 @@ public class UpdateSalaryActivity extends AppCompatActivity {
         final EditText SalaryText = (EditText) findViewById(R.id.NewSalaryTxtIn);
         final CheckBox retainRatio = (CheckBox) findViewById(R.id.RetainRatioBox);
 
-        final SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        final SharedPreferences.Editor editor = variables.edit();
-        //
-        final float salary = variables.getFloat("incomeCopy", 0);
-        final float foodcost = variables.getFloat("foodCopy",0);
-        final float utilcost = variables.getFloat("utilCopy",0);
-        final float housingcost = variables.getFloat("housingCopy",0);
-        final float debtcost = variables.getFloat("debtCopy",0);
-        final float savingscost = variables.getFloat("savingsCopy",0);
-        final float entertainmentcost = variables.getFloat("entertainmentCopy",0);
-        final float personalCarecost = variables.getFloat("personalCareCopy",0);
-        final float healthCarecost = variables.getFloat("healthCareCopy",0);
-        //
-        final float oldsalary = variables.getFloat("income", 0);
-        final float oldfoodcost = variables.getFloat("food",0);
-        final float oldutilcost = variables.getFloat("util",0);
-        final float oldhousingcost = variables.getFloat("housing",0);
-        final float olddebtcost = variables.getFloat("debt",0);
-        final float oldsavingscost = variables.getFloat("savings",0);
-        final float oldentertainmentcost = variables.getFloat("entertainment",0);
-        final float oldpersonalCarecost = variables.getFloat("personalCare",0);
-        final float oldhealthCarecost = variables.getFloat("healthCare",0);
-        //
-        final float foodcostdif = oldfoodcost - foodcost;
-        final float utilcostdif = oldutilcost - utilcost;
-        final float housingcostdif = oldhousingcost - housingcost;
-        final float debtcostdif = olddebtcost - debtcost;
-        final float savingscostdif = oldsavingscost - savingscost;
-        final float entertainmentcostdif = oldentertainmentcost - entertainmentcost;
-        final float personalCarecostdif = oldpersonalCarecost - personalCarecost;
-        final float healthCarecostdif = oldhealthCarecost - healthCarecost;
 
 
 
-        final Button finishbtn = (Button) findViewById(R.id.FinishNewSalaryButton);
+
+        Button finishbtn = (Button) findViewById(R.id.FinishNewSalaryButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
+                SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                SharedPreferences.Editor editor = variables.edit();
+                //
+                float salary = variables.getFloat("incomeCopy", 0);
+                float foodcost = variables.getFloat("foodCopy",0);
+                float utilcost = variables.getFloat("utilCopy",0);
+                float housingcost = variables.getFloat("housingCopy",0);
+                float debtcost = variables.getFloat("debtCopy",0);
+                float savingscost = variables.getFloat("savingsCopy",0);
+                float entertainmentcost = variables.getFloat("entertainmentCopy",0);
+                float personalCarecost = variables.getFloat("personalCareCopy",0);
+                float healthCarecost = variables.getFloat("healthCareCopy",0);
+                //
+                float oldsalary = variables.getFloat("income", 0);
+                float oldfoodcost = variables.getFloat("food",0);
+                float oldutilcost = variables.getFloat("util",0);
+                float oldhousingcost = variables.getFloat("housing",0);
+                float olddebtcost = variables.getFloat("debt",0);
+                float oldsavingscost = variables.getFloat("savings",0);
+                float oldentertainmentcost = variables.getFloat("entertainment",0);
+                float oldpersonalCarecost = variables.getFloat("personalCare",0);
+                float oldhealthCarecost = variables.getFloat("healthCare",0);
+                //
+                float foodcostdif = oldfoodcost - foodcost;
+                float utilcostdif = oldutilcost - utilcost;
+                float housingcostdif = oldhousingcost - housingcost;
+                float debtcostdif = olddebtcost - debtcost;
+                float savingscostdif = oldsavingscost - savingscost;
+                float entertainmentcostdif = oldentertainmentcost - entertainmentcost;
+                float personalCarecostdif = oldpersonalCarecost - personalCarecost;
+                float healthCarecostdif = oldhealthCarecost - healthCarecost;
 
                 if (retainRatio.isChecked())
                 {
-
-                    float newRatio = Float.parseFloat(SalaryText.getText().toString())/oldsalary;
+                    Intent infointent = new Intent(UpdateSalaryActivity.this, InfoActivity.class);
+                    float newRatio = (Float.parseFloat(SalaryText.getText().toString())/oldsalary);
                     float newfood = oldfoodcost * newRatio;
                     float newfoodcur = newfood - foodcostdif;
                     float newutil = oldutilcost * newRatio;
@@ -108,7 +108,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                             - newhealthcare;
                     editor.putFloat("surplus", Float.parseFloat(String.valueOf(surplus)));
                     editor.putFloat("surplusCopy", Float.parseFloat(String.valueOf(surplus)));
-                    Intent infointent = new Intent(UpdateSalaryActivity.this, InfoActivity.class);
+                    editor.commit();
                     startActivity(infointent);
                     finish();
                 }
@@ -125,7 +125,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                             - healthCarecost;
                     editor.putFloat("surplus", surplus);
                     editor.putFloat("surplusCopy", surplus);
-
+                    editor.commit();
                     startActivity(infointent);
                     finish();
 

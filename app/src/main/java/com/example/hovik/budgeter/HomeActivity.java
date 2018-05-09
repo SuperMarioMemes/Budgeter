@@ -81,6 +81,7 @@ public class HomeActivity extends AppCompatActivity {
                 editor.putFloat("food", Float.parseFloat(food.getText().toString()));
                 editor.putFloat("util", Float.parseFloat(util.getText().toString()));
                 editor.putFloat("housing",  Float.parseFloat(Housing.getText().toString()));
+                editor.putFloat("debt",  Float.parseFloat(Debt.getText().toString()));
                 editor.putFloat("savings", Float.parseFloat(Savings.getText().toString()));
                 editor.putFloat("personalCare", Float.parseFloat(personalCare.getText().toString()));
                 editor.putFloat("entertainment", Float.parseFloat(entertainment.getText().toString()));
@@ -91,6 +92,7 @@ public class HomeActivity extends AppCompatActivity {
                 editor.putFloat("foodCopy", Float.parseFloat(food.getText().toString()));
                 editor.putFloat("utilCopy", Float.parseFloat(util.getText().toString()));
                 editor.putFloat("housingCopy",  Float.parseFloat(Housing.getText().toString()));
+                editor.putFloat("debtCopy",  Float.parseFloat(Debt.getText().toString()));
                 editor.putFloat("savingsCopy", Float.parseFloat(Savings.getText().toString()));
                 editor.putFloat("personalCareCopy", Float.parseFloat(personalCare.getText().toString()));
                 editor.putFloat("entertainmentCopy", Float.parseFloat(entertainment.getText().toString()));
