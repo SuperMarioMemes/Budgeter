@@ -34,8 +34,16 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
         spinner.setAdapter(adapter);
 
 
-
-
+        Button backbtn = (Button) findViewById(R.id.purchBackButton);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent infointent = new Intent(PurchaseActivity.this, InfoActivity.class);
+                startActivity(infointent);
+                finish();
+            }
+        });
+        
         Button finishbtn = (Button) findViewById(R.id.PurchaseFinButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
