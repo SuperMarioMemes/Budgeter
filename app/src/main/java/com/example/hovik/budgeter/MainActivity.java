@@ -1,3 +1,4 @@
+//MainActivity is a splash page showed at the beginning of the application
 package com.example.hovik.budgeter;
 
 import android.content.Intent;

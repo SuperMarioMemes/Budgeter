@@ -1,3 +1,4 @@
+//UpdateSalary does as the name implies
 package com.example.hovik.budgeter;
 
 import android.content.Intent;
@@ -11,7 +12,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class UpdateSalaryActivity extends AppCompatActivity {
+public class  UpdateSalaryActivity extends AppCompatActivity {
 
 
     @Override
@@ -32,7 +33,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
             public void onClick(View v) {
                 SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = variables.edit();
-                //
+                // store the current budge values into floats
                 float salary = variables.getFloat("incomeCopy", 0);
                 float foodcost = variables.getFloat("foodCopy",0);
                 float utilcost = variables.getFloat("utilCopy",0);
@@ -42,7 +43,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                 float entertainmentcost = variables.getFloat("entertainmentCopy",0);
                 float personalCarecost = variables.getFloat("personalCareCopy",0);
                 float healthCarecost = variables.getFloat("healthCareCopy",0);
-                //
+                // store the starting budget values into floats
                 float oldsalary = variables.getFloat("income", 0);
                 float oldfoodcost = variables.getFloat("food",0);
                 float oldutilcost = variables.getFloat("util",0);
@@ -52,7 +53,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                 float oldentertainmentcost = variables.getFloat("entertainment",0);
                 float oldpersonalCarecost = variables.getFloat("personalCare",0);
                 float oldhealthCarecost = variables.getFloat("healthCare",0);
-                //
+                // calculates the change between the two
                 float foodcostdif = oldfoodcost - foodcost;
                 float utilcostdif = oldutilcost - utilcost;
                 float housingcostdif = oldhousingcost - housingcost;
@@ -62,6 +63,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                 float personalCarecostdif = oldpersonalCarecost - personalCarecost;
                 float healthCarecostdif = oldhealthCarecost - healthCarecost;
 
+                // if the user decides to maintain there old budget ration
                 if (retainRatio.isChecked())
                 {
                     Intent infointent = new Intent(UpdateSalaryActivity.this, InfoActivity.class);
@@ -113,6 +115,7 @@ public class UpdateSalaryActivity extends AppCompatActivity {
                     finish();
                 }
 
+                // if the user just decides to add to the salary
                 else
                 {
                     Intent infointent = new Intent(UpdateSalaryActivity.this, InfoActivity.class);

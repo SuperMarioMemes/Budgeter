@@ -1,3 +1,4 @@
+//PurchaseActivity used to add a new purchase and adjust budger
 package com.example.hovik.budgeter;
 
 import android.content.Intent;
@@ -33,7 +34,7 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-
+        //Back button will go back to Info Intent when pressed
         Button backbtn = (Button) findViewById(R.id.purchBackButton);
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +44,8 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
                 finish();
             }
         });
-        
+
+        //Finish Button should save the changed made to the budget and go back to Info Intent
         Button finishbtn = (Button) findViewById(R.id.PurchaseFinButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +56,7 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
 
                 float purchaseDvalue = Float.parseFloat(newPurchaseamt.getText().toString());
                 Intent infoActivity = new Intent(PurchaseActivity.this, InfoActivity.class);
+                // subtracts the user defined amount from the selected category
                 if(spinner.getSelectedItem().toString().equals("Utilities"))
                 {
                     float currentbudget = variables.getFloat("utilCopy",0);
@@ -109,8 +112,8 @@ public class PurchaseActivity extends AppCompatActivity implements AdapterView.O
                     editor.putFloat("surplusCopy", newvalue);
                 }
                 editor.commit();
-                startActivity(infoActivity);
-                finish();
+                startActivity(infoActivity); // goes to info activity
+                finish(); // ends the current activity
             }
         });
     }

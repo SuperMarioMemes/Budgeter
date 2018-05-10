@@ -1,3 +1,4 @@
+//HomeActivity used for setting up an initial account
 package com.example.hovik.budgeter;
 
 import android.content.Context;
@@ -17,6 +18,7 @@ import org.w3c.dom.Text;
 
 public class HomeActivity extends AppCompatActivity {
 
+    // declares text views
     TextView dollarDisplay;
     TextView percentDisplay;
     TextView foodpercentview;
@@ -36,6 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        // declare texts that are used to input and display
        final  EditText income = (EditText) findViewById(R.id.incomeTxt);
        final EditText food = (EditText) findViewById(R.id.FoodTxt);
        final EditText util = (EditText) findViewById(R.id.UtilTxt);
@@ -46,8 +49,6 @@ public class HomeActivity extends AppCompatActivity {
        final  EditText personalCare = findViewById(R.id.PersonalCareDisplay);
        final EditText healthCare = findViewById(R.id.HealthCareTxt);
 
-       // calculate surplus
-
         //updates
         final Button finishbtn = (Button) findViewById(R.id.AccountFinButton);
         finishbtn.setOnClickListener(new View.OnClickListener() {
@@ -56,27 +57,10 @@ public class HomeActivity extends AppCompatActivity {
 
 
                 Intent infointent = new Intent(HomeActivity.this, InfoActivity.class);
-                infointent.putExtra("income", Float.parseFloat(income.getText().toString()));
-                infointent.putExtra("food", Float.parseFloat(food.getText().toString()));
-                infointent.putExtra("util", Float.parseFloat(util.getText().toString()));
-                infointent.putExtra("housing", Float.parseFloat(Housing.getText().toString()));
-                infointent.putExtra("debt", Float.parseFloat(Debt.getText().toString()));
-                infointent.putExtra("savings", Float.parseFloat(Savings.getText().toString()));
-                infointent.putExtra("personalCare", Float.parseFloat(personalCare.getText().toString()));
-                infointent.putExtra("entertainment", Float.parseFloat(entertainment.getText().toString()));
-                infointent.putExtra("healthCare", Float.parseFloat(healthCare.getText().toString()));
-                infointent.putExtra("incomeCopy", Float.parseFloat(income.getText().toString()));
-                infointent.putExtra("foodCopy", Float.parseFloat(food.getText().toString()));
-                infointent.putExtra("utilCopy", Float.parseFloat(util.getText().toString()));
-                infointent.putExtra("housingCopy", Float.parseFloat(Housing.getText().toString()));
-                infointent.putExtra("debtCopy", Float.parseFloat(Debt.getText().toString()));
-                infointent.putExtra("savingsCopy", Float.parseFloat(Savings.getText().toString()));
-                infointent.putExtra("personalCareCopy", Float.parseFloat(personalCare.getText().toString()));
-                infointent.putExtra("entertainmentCopy", Float.parseFloat(entertainment.getText().toString()));
-                infointent.putExtra("healthCareCopy", Float.parseFloat(healthCare.getText().toString()));
-
+                // declares the shared preferences
                 SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor editor = variables.edit();
+                // stores the original values
                 editor.putFloat("income",Float.parseFloat(income.getText().toString()));
                 editor.putFloat("food", Float.parseFloat(food.getText().toString()));
                 editor.putFloat("util", Float.parseFloat(util.getText().toString()));
@@ -87,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
                 editor.putFloat("entertainment", Float.parseFloat(entertainment.getText().toString()));
                 editor.putFloat("healthCare", Float.parseFloat(healthCare.getText().toString()));
 
-
+                // stores a copy of the original
                 editor.putFloat("incomeCopy",Float.parseFloat(income.getText().toString()));
                 editor.putFloat("foodCopy", Float.parseFloat(food.getText().toString()));
                 editor.putFloat("utilCopy", Float.parseFloat(util.getText().toString()));
@@ -98,24 +82,23 @@ public class HomeActivity extends AppCompatActivity {
                 editor.putFloat("entertainmentCopy", Float.parseFloat(entertainment.getText().toString()));
                 editor.putFloat("healthCareCopy", Float.parseFloat(healthCare.getText().toString()));
 
-
+                // calculates the surplus (remainder)
                 final Float surplus = Float.parseFloat(income.getText().toString()) - Float.parseFloat(food.getText().toString())
                         - Float.parseFloat(util.getText().toString()) - Float.parseFloat(Housing.getText().toString())
                         - Float.parseFloat(Debt.getText().toString()) - Float.parseFloat(Savings.getText().toString())
                         - Float.parseFloat(personalCare.getText().toString()) - Float.parseFloat(entertainment.getText().toString())
                         - Float.parseFloat(healthCare.getText().toString());
-                infointent.putExtra("surplus", Float.parseFloat(String.valueOf(surplus)));
-                infointent.putExtra("surplusCopy", Float.parseFloat(String.valueOf(surplus)));
+                // stores the surplus and the copy
                 editor.putFloat("surplus",surplus);
                 editor.putFloat("surplusCopy", surplus);
                 editor.commit();
-                startActivity(infointent);
-                finish();
+                startActivity(infointent); // sends the user to the info activity
+                finish(); // finishes this activity
 
             }
 
         });
-        final Button calculatepercentages = (Button) findViewById(R.id.AccountCalcButton);
+        final Button calculatepercentages = (Button) findViewById(R.id.AccountCalcButton); // button to calculate the percents
         calculatepercentages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +107,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 float incomevalue = Float.parseFloat(income.getText().toString());
 
-
+                // calculates and displays percentages
                 foodpercentview = (TextView) findViewById(R.id.FoodViewPerc);
                 float foodDvalue = Float.parseFloat(food.getText().toString());
                 float foodpercent = (foodDvalue / incomevalue) * 100;

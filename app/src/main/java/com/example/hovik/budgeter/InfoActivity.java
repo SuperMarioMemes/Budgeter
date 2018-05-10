@@ -1,3 +1,4 @@
+//InfoActivity displays all the information regarding the budget made
 package com.example.hovik.budgeter;
 
 import android.content.Intent;
@@ -22,17 +23,19 @@ import java.util.Vector;
 public class InfoActivity extends AppCompatActivity {
 
 
-    boolean isCurrent = true;
+    boolean isCurrent = true; // used to determine what chart is shown
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+        // set up pie chart
         final PieChart Chart = (PieChart) findViewById(R.id.CurrentPieChart);
         Chart.invalidate();
         Chart.notifyDataSetChanged();
         setupCurrentPieChart(Chart);
 
+        // button to send user to new purchase page
         Button newpurchase = (Button) findViewById(R.id.AddPurchase);
         newpurchase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +46,7 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+        // button to send user to settings page
         Button settings = (Button) findViewById(R.id.seettingsButton);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,7 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+        // button to flip between versions of the graph
         Button changegraph = (Button) findViewById(R.id.switchGraphButton);
         changegraph.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +81,7 @@ public class InfoActivity extends AppCompatActivity {
 
     }
 
+    //Function should load values and display them on Pie chart
     private void setupCurrentPieChart(PieChart currentChart) {
         //values used for pie chart
         SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -89,16 +95,6 @@ public class InfoActivity extends AppCompatActivity {
         float personalCarecost = variables.getFloat("personalCareCopy",0);
         float healthCarecost = variables.getFloat("healthCareCopy",0);
         float surplus = variables.getFloat("surplusCopy", 0);
-
-        /*float foodcost = getIntent().getFloatExtra("foodCopy",0);
-        float utilcost = getIntent().getFloatExtra("utilCopy",0);
-        float housingcost = getIntent().getFloatExtra("housingCopy",0);
-        float debtcost = getIntent().getFloatExtra("debtCopy",0);
-        float savingscost = getIntent().getFloatExtra("savingsCopy",0);
-        float entertainmentcost = getIntent().getFloatExtra("entertainmentCopy",0);
-        float personalCarecost = getIntent().getFloatExtra("personalCareCopy",0);
-        float healthCarecost = getIntent().getFloatExtra("healthCareCopy",0);
-        float surplus = getIntent().getFloatExtra("surplusCopy", 0); */
 
         float tempNums[] = {utilcost, foodcost, housingcost, debtcost, savingscost, entertainmentcost, personalCarecost, healthCarecost, surplus};
         String categories[] = {"Utilities", "Food", "Housing", "Debt", "Savings", "Entertainment",
@@ -127,17 +123,9 @@ public class InfoActivity extends AppCompatActivity {
         currentChart.getDescription().setText("Current Budget");
         currentChart.getDescription().setTextSize(14);
     }
+
+    //Load the values used initially for the Budget and display them in the Pie chart
     private void setupInitialPieChart(PieChart currentChart) {
-        //values used for pie chart
-       /* float foodcost = getIntent().getFloatExtra("food",0);
-        float utilcost = getIntent().getFloatExtra("util",0);
-        float housingcost = getIntent().getFloatExtra("housing",0);
-        float debtcost = getIntent().getFloatExtra("debt",0);
-        float savingscost = getIntent().getFloatExtra("savings",0);
-        float entertainmentcost = getIntent().getFloatExtra("entertainment",0);
-        float personalCarecost = getIntent().getFloatExtra("personalCare",0);
-        float healthCarecost = getIntent().getFloatExtra("healthCare",0);
-        float surplus = getIntent().getFloatExtra("surplus", 0); */
 
         SharedPreferences variables = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         SharedPreferences.Editor editor = variables.edit();

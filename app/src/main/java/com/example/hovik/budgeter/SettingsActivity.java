@@ -1,3 +1,4 @@
+//SettingsActivity Used for making overall changes to budget
 package com.example.hovik.budgeter;
 
 import android.content.Intent;
